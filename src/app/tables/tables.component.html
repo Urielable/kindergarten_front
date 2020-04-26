@@ -4,10 +4,19 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Striped Table with Hover</h4>
-                        <p class="category">Here is a subtitle for this table</p>
+                        <h4 class="title">Busqueda avanzada</h4>
                     </div>
                     <div class="content table-responsive table-full-width">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Log de actividades</h4>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                          <div class="content">
+                              <input class="form-control" type="text" name="search" [(ngModel)]="baby_name" placeholder="Busca por cualquier elemento de la tabla.">
+                          </div>
                           <table class="table table-hover table-striped">
                                 <thead>
                                     <tr>
@@ -15,7 +24,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let activity of activityLogs | paginate: { itemsPerPage: 15, currentPage: p }">
+                                    <tr *ngFor="let activity of activityLogs | filter:baby_name | paginate: { itemsPerPage: 15, currentPage: p }">
                                         <td *ngFor="let col of index">
                                             {{activity[col]}}
                                         </td>

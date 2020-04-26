@@ -16,7 +16,8 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-import {NgxPaginationModule} from "ngx-pagination";
+import { NgxPaginationModule } from "ngx-pagination";
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {NgxPaginationModule} from "ngx-pagination";
     FormsModule,
     LbdModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'}),
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule
   ],
   declarations: [
     HomeComponent,
