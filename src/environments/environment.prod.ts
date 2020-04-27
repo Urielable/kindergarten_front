@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiKindergaten: 'https://api.miss-line.com'
 };
