@@ -17,6 +17,7 @@ export class ActivityLogService {
     this.HTTP_OPTIONS = {
       headers: new HttpHeaders(
         {
+          'Authorization': 'Bearer ' + localStorage.getItem('secret_auth_miss_line'),
           'Content-Type': 'application/json; charset=UTF-8',
           'Accept': 'application/json; charset=UTF-8'
         }
