@@ -86,7 +86,6 @@ export class AdminLayoutComponent implements OnInit {
   }
 
   userIsAuthenticated() {
-    console.log('user authenticated');
     const publicKeyMissLine: any = localStorage.getItem('secret_auth_miss_line');
     if (publicKeyMissLine !== null){
       this.auth = true;

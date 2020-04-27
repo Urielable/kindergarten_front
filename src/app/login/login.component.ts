@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
+import {LoginService} from "../services/login.service";
+
+declare var $:any;
 
 @Component({
   selector: 'app-login',
@@ -16,18 +19,16 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
-  response: { publicKey: '', secretKey: '' };
 
   auth:boolean = false;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
-    //private authenticationService: AuthenticationService,) {}
+    private router: Router,
+    private authenticationService: LoginService,
   ) {}
 
   ngOnInit(): void {
-    console.log('login')
     this.loginForm = new FormGroup({
       username: new FormControl('', [Validators.required]),
       password: new FormControl('',  [Validators.required])
@@ -41,9 +42,31 @@ export class LoginComponent implements OnInit {
   get form() { return this.loginForm.controls; }
 
   performLogin() {
-    console.log('login');
-    this.auth = true;
-    localStorage.setItem('secret_auth_miss_line', 'true');
+    this.loginService();
+  }
+
+  loginService(){
+    let user = $('#username').val();
+    let pass = $('#password').val();
+    this.authenticationService.login(user, pass).then((data: any) => {
+      localStorage.setItem('secret_auth_miss_line', 'Bearer ' + data.jwt)
+      location.reload();
+    }).catch((login_errors: any) => {
+      const type = ['info'];
+
+      var color = Math.floor((Math.random() * 4) + 1);
+      $.notify({
+        icon: "pe-7s-user",
+        message: "Login incorrecto intenta nuevamente."
+      },{
+        type: type[color],
+        timer: 1000,
+        placement: {
+          from: 'top',
+          align: 'left'
+        }
+      });
+    });
   }
 
 }
