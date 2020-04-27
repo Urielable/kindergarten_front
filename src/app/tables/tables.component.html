@@ -6,7 +6,51 @@
                     <div class="header">
                         <h4 class="title">Busqueda avanzada</h4>
                     </div>
-                    <div class="content table-responsive table-full-width">
+                    <div class="row content table-responsive table-full-width">
+                        <div class="col-md-4">
+                            <span>Bebés</span>
+                            <select #selectBabiesCatalog
+                                    class="form-control"
+                                    id="selectBabiesCatalog">
+                                <option [value]="0">
+                                    Todos
+                                </option>
+                                <option *ngFor="let item of babiesCatalog" [value]="item.id">
+                                    {{item.value}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <span>Asistentes</span>
+                            <select #selectAssistanCatalog
+                                    class="form-control"
+                                    id="selectAssistanCatalog">
+                                <option [value]="0">
+                                    Todos
+                                </option>
+                                <option *ngFor="let item of assistantsCatalog" [value]="item.id">
+                                    {{item.value}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <span>Estatus</span>
+                            <select #selectStatusCatalog
+                                    class="form-control"
+                                    id="selectStatusCatalog">
+                                <option *ngFor="let item of statusCatalog" [value]="item.id">
+                                    {{item.value}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <span>{{"   "}}</span>
+                            <button type="button"
+                                    class="btn btn-secondary"
+                                    (click)="advancedSearch()">
+                                Buscar
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -15,7 +59,7 @@
                     </div>
                     <div class="content table-responsive table-full-width">
                           <div class="content">
-                              <input class="form-control" type="text" name="search" [(ngModel)]="baby_name" placeholder="Busca por cualquier elemento de la tabla.">
+                              <input class="form-control" type="text" name="search" [(ngModel)]="baby_name" placeholder="Busqueda rápida por cualquier elemento de la tabla.">
                           </div>
                           <table class="table table-hover table-striped">
                                 <thead>
