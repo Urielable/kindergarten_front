@@ -63,4 +63,9 @@ export class NavbarComponent implements OnInit{
       }
       return 'Dashboard';
     }
+
+    logout(){
+      console.log('hi logout');
+      localStorage.clear();
+    }
 }

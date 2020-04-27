@@ -63,10 +63,10 @@
     margin-bottom: 30px
 }
 .sidebar .nav > li.active-pro{
-    position: absolute;
-    width: 100%;
-    bottom: 10px;
-}
+     position: absolute;
+     width: 100%;
+     bottom: 10px;
+ }
 .sidebar .nav > li.active-pro a{
     background: rgba(255, 255, 255, 0.14);
     opacity: 1;
@@ -76,4 +76,39 @@
 .table-upgrade td:nth-child(2),
 .table-upgrade td:nth-child(3){
     text-align: center;
+}
+
+.login-box {
+    position: relative;
+    max-height: calc(100vh - 75px);
+    min-height: 100%;
+    overflow: auto;
+    width: 260px;
+    z-index: 4;
+    padding-bottom: 75px;
+    background-color: rgba(0,0,0,0);
+}
+
+.login-box label{
+    color: white;
+    text-transform: initial;
+}
+
+.login-btn {
+    background-color: white;
+    opacity: 1;
+    border-color: white;
+    color:black;
+}
+
+.login-btn:hover {
+    background-color: white;
+    opacity: 0.8;
+    border-color: white;
+    color:black;
+}
+
+.login-wellcome {
+    font-family: "Roboto";
+    color: white;
 }

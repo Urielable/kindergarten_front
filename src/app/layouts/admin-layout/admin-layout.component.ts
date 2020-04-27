@@ -1,11 +1,9 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Location, PopStateEvent } from '@angular/common';
 import 'rxjs/add/operator/filter';
-import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-admin-layout',
@@ -19,8 +17,10 @@ export class AdminLayoutComponent implements OnInit {
 
   constructor( public location: Location, private router: Router) {}
 
+  auth:boolean = false;
+
   ngOnInit() {
-    console.log(this.router)
+      this.userIsAuthenticated();
       const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
       if (isWindows) {
@@ -83,6 +83,15 @@ export class AdminLayoutComponent implements OnInit {
           bool = true;
       }
       return bool;
+  }
+
+  userIsAuthenticated() {
+    const publicKeyMissLine: any = localStorage.getItem('secret_auth_miss_line');
+    if (publicKeyMissLine !== null){
+      this.auth = true;
+    } else {
+      this.auth = false;
+    }
   }
 
 }
