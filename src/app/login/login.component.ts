@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
     let user = $('#username').val();
     let pass = $('#password').val();
     this.authenticationService.login(user, pass).then((data: any) => {
-      localStorage.setItem('secret_auth_miss_line', 'Bearer ' + data.jwt)
+      localStorage.setItem('secret_auth_miss_line', data.jwt)
       location.reload();
     }).catch((login_errors: any) => {
       const type = ['info'];
