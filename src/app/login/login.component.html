@@ -46,7 +46,7 @@
                         class="btn btn-secondary login-btn"
                         type="submit"
                         (click)="performLogin()"
-                        [disabled]="loginForm.valid">Log In</button>
+                        [disabled]="!loginForm.valid">Log In</button>
             </div>
         </div>
         <div  class="row" *ngIf="loginResponse && loginSuccess">

@@ -23,6 +23,7 @@ export class TablesComponent implements OnInit {
   babiesCatalog : Catalogs[] = [];
   assistantsCatalog : Catalogs[] = [];
   statusCatalog : Catalogs[] = [];
+  baby_name:any;
 
   @Input() babySelectID:number;
 
