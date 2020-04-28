@@ -1,9 +1,20 @@
 <ng-container *ngIf="auth == false">
     <div class="wrapper">
         <div class="sidebar" data-color="red" data-image="">
-            <app-login></app-login>
+            <div  class="login-box card">
+                <div class="logo">
+                    <a href="http://www.creative-tim.com" class="simple-text">
+                        <div class="logo-img">
+                            <img src="/assets/img/angular2-logo-white.png"/>
+                        </div>
+                        Miss Line
+                    </a>
+                </div>
+            </div>
+
         </div>
         <div class="main-panel">
+            <app-login></app-login>
         </div>
     </div>
 </ng-container>

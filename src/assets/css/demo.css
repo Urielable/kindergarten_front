@@ -83,15 +83,19 @@
     max-height: calc(100vh - 75px);
     min-height: 100%;
     overflow: auto;
-    width: 260px;
     z-index: 4;
     padding-bottom: 75px;
     background-color: rgba(0,0,0,0);
 }
 
 .login-box label{
-    color: white;
+    color: #444444;
     text-transform: initial;
+}
+
+.login-box input{
+    margin: 0 15px;
+    width: 80%;
 }
 
 .login-btn {
@@ -110,5 +114,5 @@
 
 .login-wellcome {
     font-family: "Roboto";
-    color: white;
+    color: #444444;
 }

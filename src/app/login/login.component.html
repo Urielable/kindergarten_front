@@ -1,60 +1,50 @@
-<div  class="login-box card">
-    <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text">
-            <div class="logo-img">
-                <img src="/assets/img/angular2-logo-white.png"/>
+<div class="login-box card-body">
+    <form [formGroup]="loginForm" class="form-horizontal form-material" id="loginform" >
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-lg-8">
+                <h2 class="login-wellcome">Bienvenido</h2>
             </div>
-            Miss Line
-        </a>
-    </div>
-    <div class="card-body">
-        <form [formGroup]="loginForm" class="form-horizontal form-material" id="loginform" >
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-lg-8">
-                    <h2 class="login-wellcome">Bienvenido</h2>
-                </div>
-                <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <label> ¡Es bueno verte! </label>
+                <label> Ingresa tus credenciales para iniciar sesión </label>
             </div>
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-lg-8">
-                    <label> ¡Es bueno verte! </label>
-                    <label> Ingresa tus credenciales para iniciar sesión </label>
-                </div>
-                <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="form-group m-t-40 resp" >
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <input class="form-control" type="text" id="username" placeholder="Usuario" formControlName="username">
             </div>
-            <div class="form-group m-t-40 resp" >
-                <div class="col-md-2"></div>
-                <div class="col-xs-8">
-                    <input class="form-control" type="text" id="username" placeholder="Usuario" formControlName="username">
-                </div>
-                <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="form-group resp">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <input class="form-control" type="password" id="password" placeholder="Contraseña" formControlName="password">
             </div>
-            <div class="form-group resp">
-                <div class="col-md-2"></div>
-                <div class="col-xs-8">
-                    <input class="form-control" type="password" id="password" placeholder="Contraseña" formControlName="password">
-                </div>
-                <div class="col-md-2"></div>
-            </div>
+            <div class="col-md-2"></div>
+        </div>
 
-        </form>
-        <div class="form-group text-center col-10">
-            <div class="col-12 resp">
-                <button id="btn-submit"
-                        class="btn btn-secondary login-btn"
-                        type="submit"
-                        (click)="performLogin()"
-                        [disabled]="!loginForm.valid">Log In</button>
-            </div>
+    </form>
+    <div class="form-group text-center col-10">
+        <div class="col-12 resp">
+            <button id="btn-submit"
+                    class="btn btn-secondary login-btn"
+                    type="submit"
+                    (click)="performLogin()"
+                    [disabled]="!loginForm.valid">Log In</button>
         </div>
-        <div  class="row" *ngIf="loginResponse && loginSuccess">
-            <label class="text-align-center text-success">{{loginResponse}}</label>
-        </div>
-        <div class="row" *ngIf="loginResponse && !loginSuccess">
-            <label class="text-align-center text-danger">{{loginResponse}}</label>
-        </div>
-        <br>
     </div>
+    <div  class="row" *ngIf="loginResponse && loginSuccess">
+        <label class="text-align-center text-success">{{loginResponse}}</label>
+    </div>
+    <div class="row" *ngIf="loginResponse && !loginSuccess">
+        <label class="text-align-center text-danger">{{loginResponse}}</label>
+    </div>
+    <br>
 </div>
