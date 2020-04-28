@@ -1,6 +1,16 @@
 # Kindergaten app front
 
-## how to
+This app is the front of the kinedu exercise.
+
+## Live Demo
+
+You can view the live demo here [https://miss-line.com](https://miss-line.com).
+
+This demo is deployed in aws ec2.
+
+You can view the documentation for api here [https://github.com/Urielable/kindergaten_api](https://github.com/Urielable/kindergaten_api).
+
+## Develop mode
 
 1. Install NodeJs from [NodeJs Official Page](https://nodejs.org/en).
 2. Open Terminal
@@ -9,12 +19,3 @@
 5. Then: ```npm install```
 6. And: ```ng serve```
 7. Navigate to `http://localhost:4200/`
-
-
-## Live Demo
-
-You can view the live demo here [https://miss-line.com](https://miss-line.com).
-
-This demo is deployed in aws ec2.
-
-You can view the api here 
