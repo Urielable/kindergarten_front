@@ -6,6 +6,10 @@ export interface LegendItem {
   imageClass: string;
 }
 
+export interface DataItem {
+  series: [[]];
+}
+
 export enum ChartType {
   Pie,
   Line,

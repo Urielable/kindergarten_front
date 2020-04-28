@@ -28,7 +28,7 @@ import { Ng2SearchPipeModule } from "ng2-search-filter";
     LbdModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'}),
     NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
   ],
   declarations: [
     HomeComponent,
