@@ -1,4 +1,4 @@
-# Kindergaten app front
+# Kindergarten app front
 
 This app is the front of the kinedu exercise.
 
@@ -8,7 +8,7 @@ You can view the live demo here [https://miss-line.com](https://miss-line.com).
 
 This demo is deployed in aws ec2.
 
-You can view the documentation for api here [https://github.com/Urielable/kindergaten_api](https://github.com/Urielable/kindergaten_api).
+You can view the documentation for api here [https://github.com/Urielable/kindergarten_api/wiki](https://github.com/Urielable/kindergaten_api/wiki).
 
 ## Develop mode
 
